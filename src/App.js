@@ -203,32 +203,4 @@ const ALL_FILES = [
   //   }),
   // },
 ];
-// const styles = StyleSheet.create({
-//   container: {
-//     // justifyContent: 'center',
-//     alignItems: "center",
-//     backgroundColor: "rgba(114,160,193,1)",
-//     height: "100%",
-//   },
-//   scroll: {
-//     paddingTop: "0%",
-//     width: "100%",
-//     // height: '90%',
-//     // backgroundColor: 'yellow',
-//   },
-//   shabadButton: {
-//     top: 10,
-//     width: 200,
-//     height: 50,
-//     borderRadius: 40,
-//     backgroundColor: "#5072A7",
-//     justifyContent: "center",
-//     alignItems: "center",
-//   },
-//   shabadtext: {
-//     alignItems: "center",
-//     justifyContent: "center",
-//   },
-// });
-
 export default App;
