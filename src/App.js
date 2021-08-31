@@ -94,16 +94,16 @@ function FoldersToPdf({ folderName, setFolder }) {
             item.title.split(" ").join("");
           // setHref(hrefLoc);
           // console.log("https://docs.google.com/viewerng/viewer?url=" + hrefLoc);
+          const pdfDocView =
+            "https://docs.google.com/viewerng/viewer?url=" + hrefLoc;
           return (
             <div key={item.title}>
               <a
-                href={"https://docs.google.com/viewerng/viewer?url=" + hrefLoc}
+                href={pdfDocView}
                 // target="_blank"
                 // rel="noreferrer"
               >
-                <button
-                // onClick={() => setFolder(item.title)}
-                >
+                <button onClick={() => console.log(pdfDocView)}>
                   <p>{item.title}</p>
                 </button>
               </a>
@@ -203,10 +203,10 @@ const ALL_FILES = [
   {
     title: "Vaara De Vadeek",
     listt: [
-      { tilte: "VaaraDiVadeekMahalla1.pdf" },
-      { tilte: "VaaraDiVadeekMahalla3.pdf" },
-      { tilte: "VaaraDiVadeekMahalla4.pdf" },
-      { tilte: "VaaraDiVadeekMahalla5.pdf" },
+      { title: "VaaraDiVadeekMahalla1.pdf" },
+      { title: "VaaraDiVadeekMahalla3.pdf" },
+      { title: "VaaraDiVadeekMahalla4.pdf" },
+      { title: "VaaraDiVadeekMahalla5.pdf" },
     ],
   },
   {
