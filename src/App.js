@@ -2,6 +2,7 @@ import "./App.css";
 
 import React from "react";
 
+// run 'npm run deploy' to have build verson
 function App() {
   const [folder, setFolder] = React.useState("");
 
