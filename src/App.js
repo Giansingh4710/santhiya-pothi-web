@@ -1,21 +1,51 @@
 import "./App.css";
 
-import React from "react";
-
+import React, { useState } from "react";
 // run 'npm run deploy' to have build verson
 function App() {
-  const [folder, setFolder] = React.useState("");
+  const [folder, setFolder] = useState("");
+  // const [href, setHref] = useState(
+  //   "http://africau.edu/images/default/sample.pdf"
+  // );
 
+  function screenContent() {
+    if (folder === "") return <HomeScreen setFolder={setFolder} />;
+    // if (folder.includes(".pdf")) {
+    //   console.log("https://docs.google.com/gview?embedded=true&url=" + href);
+    //   return (
+    //     <div class="container">
+    //       <button onClick={() => setFolder("")}>
+    //         <h2>back</h2>
+    //       </button>
+    //       <h1>Loading....</h1>
+    //       <object
+    //         class="internal"
+    //         data={"https://docs.google.com/gview?embedded=true&url=" + href}
+    //         type="application/pdf"
+    //         width="90%"
+    //         height="100%"
+    //       >
+    //         <p>
+    //           Alternative text - include a link <a href={href}>to the PDF!</a>
+    //         </p>
+    //       </object>
+    //     </div>
+    //   );
+    // }
+    return (
+      <FoldersToPdf
+        folderName={folder}
+        setFolder={setFolder}
+        // setHref={setHref}
+      />
+    );
+  }
   return (
     <div className="App">
       <h1>Santhiya Pothi</h1>
       <h2>{folder}</h2>
 
-      {folder === "" ? (
-        <HomeScreen setFolder={setFolder} />
-      ) : (
-        <FoldersToPdf folderName={folder} setFolder={setFolder} />
-      )}
+      {screenContent()}
     </div>
   );
 }
@@ -46,17 +76,10 @@ function HomeScreen({ setFolder }) {
 }
 
 function FoldersToPdf({ folderName, setFolder }) {
-  let theListWithFiles;
-  // ALL_FILES.map((aFolder) => {
-  //   if (aFolder.title === folderName) {
-  //     theListWithFiles = aFolder.listt;
-  //   }
-  // });
-  theListWithFiles = ALL_FILES.filter(
+  let theListWithFiles = ALL_FILES.filter(
     (aFolder) => aFolder.title === folderName
   );
   theListWithFiles = theListWithFiles[0].listt;
-  // console.log(theListWithFiles);
   return (
     <div>
       <button onClick={() => setFolder("")}>
@@ -69,11 +92,18 @@ function FoldersToPdf({ folderName, setFolder }) {
             folderName.split(" ").join("") +
             "/" +
             item.title.split(" ").join("");
+          // setHref(hrefLoc);
+          // console.log("https://docs.google.com/viewerng/viewer?url=" + hrefLoc);
           return (
             <div key={item.title}>
-              <a href={hrefLoc} target="_blank" rel="noreferrer">
+              <a
+                href={"https://docs.google.com/viewerng/viewer?url=" + hrefLoc}
+                // target="_blank"
+                // rel="noreferrer"
+              >
+                <button
+                // onClick={() => setFolder(item.title)}
                 >
-                <button>
                   <p>{item.title}</p>
                 </button>
               </a>
