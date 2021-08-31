@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/santhiya-pothi-web/static/css/main.a617e044.chunk.css",
-    "main.js": "/santhiya-pothi-web/static/js/main.a2c4d5be.chunk.js",
-    "main.js.map": "/santhiya-pothi-web/static/js/main.a2c4d5be.chunk.js.map",
-    "runtime-main.js": "/santhiya-pothi-web/static/js/runtime-main.d3a64234.js",
-    "runtime-main.js.map": "/santhiya-pothi-web/static/js/runtime-main.d3a64234.js.map",
-    "static/js/2.a88748d0.chunk.js": "/santhiya-pothi-web/static/js/2.a88748d0.chunk.js",
-    "static/js/2.a88748d0.chunk.js.map": "/santhiya-pothi-web/static/js/2.a88748d0.chunk.js.map",
-    "index.html": "/santhiya-pothi-web/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/santhiya-pothi-web/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.a88748d0.chunk.js.LICENSE.txt": "/santhiya-pothi-web/static/js/2.a88748d0.chunk.js.LICENSE.txt"
+    "main.css": "./static/css/main.a617e044.chunk.css",
+    "main.js": "./static/js/main.a2c4d5be.chunk.js",
+    "main.js.map": "./static/js/main.a2c4d5be.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.0c2d5aea.js",
+    "runtime-main.js.map": "./static/js/runtime-main.0c2d5aea.js.map",
+    "static/js/2.a88748d0.chunk.js": "./static/js/2.a88748d0.chunk.js",
+    "static/js/2.a88748d0.chunk.js.map": "./static/js/2.a88748d0.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.a617e044.chunk.css.map": "./static/css/main.a617e044.chunk.css.map",
+    "static/js/2.a88748d0.chunk.js.LICENSE.txt": "./static/js/2.a88748d0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.d3a64234.js",
+    "static/js/runtime-main.0c2d5aea.js",
     "static/js/2.a88748d0.chunk.js",
     "static/css/main.a617e044.chunk.css",
     "static/js/main.a2c4d5be.chunk.js"
