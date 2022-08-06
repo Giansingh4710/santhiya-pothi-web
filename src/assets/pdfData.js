@@ -461,7 +461,5 @@ export const folderToFileData = {
     },
     //'Bhagat Bani Tatkara.jpeg'
   },
-  'Added PDFs': {},
-  // 'Unfinished Business': {},
 };
 

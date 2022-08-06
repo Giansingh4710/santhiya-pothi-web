@@ -1,54 +1,67 @@
 import "./App.css";
-
-import { useState } from "react";
 import { Route, Routes, useParams, Link } from "react-router-dom"
-import { IoArrowBack } from "react-icons/io5";
 import { folderToFileData } from "./assets/pdfData.js"
 
 // run 'npm run deploy' to have build verson
-function decode(link) {
-  // console.log(link)
-  const map = { '-': ':', '_': '/' }
-  let ans = ""
-  for (const char of link) {
-    if (map[char]) ans += map[char]
-    else ans += char
-  }
-  return ans
-}
-function encode(link) {
-  // console.log(link)
-  const map = { ':': '-', '/': '_' }
-  let ans = ""
-  for (const char of link) {
-    if (map[char]) ans += map[char]
-    else ans += char
-  }
-  return ans
-}
 
 function App() {
   return (
     <Routes>
       <Route path='/' element={<Home />} />
-      <Route path='/showPdf/:link' element={<OpenPdf />} />
+      <Route path='/:title' element={<OtherLists />} />
+      <Route path='/:title/:link' element={<OpenPdf />} />
     </Routes>
   )
 }
 function Home() {
-  const [currentDataObj, setCurrentDataObj] = useState(folderToFileData)
-  // const {title}=useParams()
-  // console.log(title=="")
-
   return (
     <div className="App">
-      <ListDisplay dataObj={currentDataObj} setDataObj={setCurrentDataObj} />
+      <h1>Home</h1>
+      <ListDisplay dataObj={folderToFileData} />
     </div>
   )
 }
-function ListDisplay({ dataObj, setDataObj }) {
-  // const fullPath = params.fullPath;
+function OtherLists() {
+  function getObj(obj, ans) {
+    if(!obj[ans]){
+      for(const key in obj){
+        const newAns=getObj(obj[key],ans)
+        if(!newAns) continue
+        return newAns
+      }
+    }
+    return obj[ans]
+  }
+  const { title } = useParams()
 
+  // let dataObj = title==="Home"?folderToFileData:getObj(folderToFileData,title)
+  let dataObj=getObj(folderToFileData,title)
+  console.log("OUT FUCNC",dataObj)
+  if(!dataObj){
+    return(
+    <div className="App">
+        <h1>Wrong link Entered</h1>
+        <h3>'{title}' not valid</h3>
+        <Link to={"/"} >
+            <BarOption
+              left={""}
+              text={"Go Back"}
+            />
+          </Link>
+
+    </div>
+
+    )
+  }
+  return (
+    <div className="App">
+      <h1>{title}</h1>
+      <ListDisplay dataObj={dataObj} />
+    </div>
+  )
+}
+
+function ListDisplay({ dataObj }) {
   const styles = {
     container: {
       alignItems: 'center',
@@ -66,32 +79,30 @@ function ListDisplay({ dataObj, setDataObj }) {
           const isFolder = !dataObj[item].currentAng; //currentAng will never be 0
           if (!isFolder) {
             const newLink = encode(dataObj[item].uri)
-            return <Link to={`/showPdf/${newLink}`}>
+            return <Link to={`/${item}/${newLink}`}
+              key={item}
+            >
               <BarOption
                 key={item}
                 left={""}
                 text={item}
-                onClick={() => {console.log(item)}}
               />
             </Link>
           }
-          return <BarOption
+          return <Link to={`/${item}`}
             key={item}
-            left={""}
-            text={item}
-            onClick={() => {
-              if (isFolder) {
-                setDataObj(dataObj[item])
-              } else {
-              }
-            }}
-          />
+          >
+            <BarOption
+              left={""}
+              text={item}
+            />
+          </Link>
         })}
       </div>
     </div>
   );
 }
-export function BarOption({ text, onClick }) {
+export function BarOption({ text}) {
   const styles = {
     itemContainer: {
       padding: 5,
@@ -110,7 +121,6 @@ export function BarOption({ text, onClick }) {
   return (
     <div
       style={styles.itemContainer}
-      onClick={() => onClick()}
     >
       <p style={styles.titleText}>{text}</p>
     </div>
@@ -119,13 +129,34 @@ export function BarOption({ text, onClick }) {
 
 function OpenPdf({ }) {
   const { innerWidth: width, innerHeight: height } = window;
-  const { link } = useParams()
-  decode(link)
+  const { link,title } = useParams()
+  const useableLink=decode(link)
+  console.log(useableLink)
   return (
     <div >
-      <embed src={decode(link)} width={width} height={height} />
+      <h1>{title}</h1>
+      <embed src={useableLink} width={width} height={height} />
     </div>
   );
+}
+
+function decode(link) {
+  const map = { '^': ':', '!': '/' }
+  let ans = ""
+  for (const char of link) {
+    if (map[char]) ans += map[char]
+    else ans += char
+  }
+  return ans
+}
+function encode(link) {
+  const map = { ':': '^', '/': '!' }
+  let ans = ""
+  for (const char of link) {
+    if (map[char]) ans += map[char]
+    else ans += char
+  }
+  return ans
 }
 
 export default App;
