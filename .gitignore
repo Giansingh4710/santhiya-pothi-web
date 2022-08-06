@@ -23,3 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 /public/pdfs
+/public/webviewer
+ # @pdftron/webviewer copy into <- dir
