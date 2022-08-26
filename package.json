@@ -3,27 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@pdftron/webviewer": "^8.1.0",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "copy-webpack-plugin": "^9.0.1",
-    "cross-env": "^7.0.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-flexview": "^6.0.1",
-    "react-icons": "^4.2.0",
-    "react-pdf": "^5.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "move-static": "cp -a ./node_modules/@pdftron/webviewer/public/. ./dist/public/webviewer",
-    "build": "cross-env PUBLIC_URL=./ react-scripts build && npm run move-static"
+    "build": "cross-env PUBLIC_URL=./ react-scripts build"
   },
   "eslintConfig": {
     "extends": [
