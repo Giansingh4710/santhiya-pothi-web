@@ -3,6 +3,7 @@ import { Route, Routes, useParams, Link } from "react-router-dom"
 import { folderToFileData, itemToLink } from "./assets/pdfData.js"
 import playstorePng from "./assets/imgs/playstore.png"
 import appstorePng from "./assets/imgs/appstore.png"
+import { isMobile } from "react-device-detect";
 
 // run 'npm run deploy' to have build verson
 
@@ -156,7 +157,13 @@ export function BarOption({ text }) {
   );
 }
 
-function OpenPdf({ link, title }) {
+function OpenPdf({link,title}) {
+  // return <OpenPdfMobile link={link} title={title} />
+  if(isMobile) return <OpenPdfMobile link={link} title={title} />
+  return <OpenPdfDesktop link={link} title={title} />
+}
+
+function OpenPdfDesktop({ link, title }) {
   const { innerWidth: width, innerHeight: height } = window;
   // const { link,title } = useParams()
   // const useableLink=decode(link)
@@ -166,6 +173,33 @@ function OpenPdf({ link, title }) {
     <div >
       <h1>{title}</h1>
       <embed src={useableLink} width={width} height={height} />
+    </div>
+  );
+}
+
+function OpenPdfMobile({link,title}) {
+  const { innerWidth: width, innerHeight: height } = window;
+  const pdfLink =
+    "https://docs.google.com/viewer?url="+link+"&embedded=true"
+  console.log(pdfLink)
+
+  const styles={
+    container:{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    pdf:{
+      width:width*0.9,
+      height:height*0.9,
+    }
+  }
+  return (
+    <div>
+      <h1 style={styles.title}>{title}</h1>
+      <div style={styles.container}>
+        <iframe src={pdfLink} style={styles.pdf} frameborder="0"> </iframe>
+      </div>
     </div>
   );
 }
