@@ -1,4 +1,4 @@
-export const folderToFileData = {
+const folderToFileData = {
   'Sri Guru Granth Sahib Jee': {
     'Adi Maharaj (Big File)': {
       checked: false,
@@ -462,7 +462,22 @@ export const folderToFileData = {
     //'Bhagat Bani Tatkara.jpeg'
   },
 };
-export const itemToLink={
+
+function getItemsFromSuperObj(obj,ans={}){
+  for(const key in obj){
+    const isFolder = !obj[key].currentAng; //currentAng will never be 0
+    if(isFolder){
+      ans[key]="folder"
+      getItemsFromSuperObj(obj[key],ans)
+    }else{
+      ans[key]=obj[key].uri
+    }
+  }
+  return ans
+}
+let a=getItemsFromSuperObj(folderToFileData)
+console.log(a)
+let b={
   'Sri Guru Granth Sahib Jee': 'folder',
   'Adi Maharaj (Big File)': 'https://45.41.235.161/~daasstor/SanthiyaPothi/SriGuruGranthSahibJee/AdiMaharaj%28BigFile%29.pdf',
   'Adi Maharaj (Small File)': 'https://45.41.235.161/~daasstor/SanthiyaPothi/SriGuruGranthSahibJee/AdiMaharaj%28SmallFile%29.pdf',

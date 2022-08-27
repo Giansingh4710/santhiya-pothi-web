@@ -1,6 +1,8 @@
 import "./App.css";
 import { Route, Routes, useParams, Link } from "react-router-dom"
-import { folderToFileData } from "./assets/pdfData.js"
+import { folderToFileData, itemToLink } from "./assets/pdfData.js"
+import playstorePng from "./assets/imgs/playstore.png"
+import appstorePng from "./assets/imgs/appstore.png"
 
 // run 'npm run deploy' to have build verson
 
@@ -9,47 +11,86 @@ function App() {
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/:title' element={<OtherLists />} />
-      <Route path='/:title/:link' element={<OpenPdf />} />
+      <Route path='/joke' element={<AppleStoreJoke />} />
+      {/* <Route path='/:title/:link' element={<OpenPdf />} /> */}
     </Routes>
   )
 }
+function AppleStoreJoke(){
+  return (
+  <div>
+      <h1>
+        SIKEEEEEEEEE
+      </h1>
+        <h2>Unfortunately you have made the Wrong Decision by choosing an iphone.🤢🤮</h2>
+      All jokes aside, will be trying to make the ios version soon. 
+      Until then, think about the wrong Decision you made by choosing an iphone.
+      Vaheguru
+    </div>
+  )
+}
 function Home() {
+  const { innerWidth: width, innerHeight: height } = window;
+  const styles = {
+    stores: {
+      flex:1,
+      // justifyContent: 'space-evenly',
+      justifyContent : 'space-between',
+    },
+  }
   return (
     <div className="App">
       <h1>Home</h1>
       <ListDisplay dataObj={folderToFileData} />
+      <div style={styles.stores}>
+        <a href="https://play.google.com/store/apps/details?id=com.larrivarpothi" >
+          <img src={playstorePng} width={width/7} height={height/7} alt=""/>
+        </a>
+        <Link to={'/joke'} >
+          <img src={appstorePng} width={width/7} height={height/7} alt=""/>
+        </Link>
+      </div>
+      <ul>
+        <li>
+          <a href="https://sdoji.xyz/">Keertan Player</a>
+        </li>
+        <li>
+          <a href="https://giansingh4710.github.io/paathPlayer/">Gurbani(Paath) Player</a>
+        </li>
+      </ul>
     </div>
   )
 }
 function OtherLists() {
   function getObj(obj, ans) {
-    if(!obj[ans]){
-      for(const key in obj){
-        const newAns=getObj(obj[key],ans)
-        if(!newAns) continue
+    if (!obj[ans]) {
+      for (const key in obj) {
+        const newAns = getObj(obj[key], ans)
+        if (!newAns) continue
         return newAns
       }
     }
     return obj[ans]
   }
   const { title } = useParams()
+  const link = itemToLink[title]
+  if (link !== 'folder')
+    return (<OpenPdf link={link} title={title} />)
 
-  // let dataObj = title==="Home"?folderToFileData:getObj(folderToFileData,title)
-  let dataObj=getObj(folderToFileData,title)
-  console.log("OUT FUCNC",dataObj)
-  if(!dataObj){
-    return(
-    <div className="App">
+  let dataObj = getObj(folderToFileData, title)
+  if (!dataObj) {
+    return (
+      <div className="App">
         <h1>Wrong link Entered</h1>
         <h3>'{title}' not valid</h3>
         <Link to={"/"} >
-            <BarOption
-              left={""}
-              text={"Go Back"}
-            />
-          </Link>
+          <BarOption
+            left={""}
+            text={"Go Back"}
+          />
+        </Link>
 
-    </div>
+      </div>
 
     )
   }
@@ -76,33 +117,21 @@ function ListDisplay({ dataObj }) {
     <div style={styles.container}>
       <div style={styles.scroll}>
         {keysLst.map((item) => {
-          const isFolder = !dataObj[item].currentAng; //currentAng will never be 0
-          if (!isFolder) {
-            const newLink = encode(dataObj[item].uri)
-            return <Link to={`/${item}/${newLink}`}
-              key={item}
-            >
+          console.log(item,itemToLink[item])
+          return (
+            <Link to={`/${item}`} key={item} >
               <BarOption
-                key={item}
                 left={""}
                 text={item}
               />
             </Link>
-          }
-          return <Link to={`/${item}`}
-            key={item}
-          >
-            <BarOption
-              left={""}
-              text={item}
-            />
-          </Link>
+          )
         })}
       </div>
     </div>
   );
 }
-export function BarOption({ text}) {
+export function BarOption({ text }) {
   const styles = {
     itemContainer: {
       padding: 5,
@@ -127,10 +156,11 @@ export function BarOption({ text}) {
   );
 }
 
-function OpenPdf({ }) {
+function OpenPdf({ link, title }) {
   const { innerWidth: width, innerHeight: height } = window;
-  const { link,title } = useParams()
-  const useableLink=decode(link)
+  // const { link,title } = useParams()
+  // const useableLink=decode(link)
+  const useableLink = link
   console.log(useableLink)
   return (
     <div >
@@ -140,23 +170,5 @@ function OpenPdf({ }) {
   );
 }
 
-function decode(link) {
-  const map = { '^': ':', '!': '/' }
-  let ans = ""
-  for (const char of link) {
-    if (map[char]) ans += map[char]
-    else ans += char
-  }
-  return ans
-}
-function encode(link) {
-  const map = { ':': '^', '/': '!' }
-  let ans = ""
-  for (const char of link) {
-    if (map[char]) ans += map[char]
-    else ans += char
-  }
-  return ans
-}
 
 export default App;
