@@ -1,9 +1,11 @@
+import React from 'react';
 import "./App.css";
 import { Route, Routes, useParams, Link } from "react-router-dom"
 import { folderToFileData, itemToLink } from "./assets/pdfData.js"
 import playstorePng from "./assets/imgs/playstore.png"
 import appstorePng from "./assets/imgs/appstore.png"
 import { isMobile } from "react-device-detect";
+
 
 // run 'npm run deploy' to have build verson
 
@@ -32,23 +34,25 @@ function AppleStoreJoke(){
 }
 function Home() {
   const { innerWidth: width, innerHeight: height } = window;
+  const theWidth=isMobile?width/2:width/5
   const styles = {
     stores: {
       flex:1,
-      // justifyContent: 'space-evenly',
-      justifyContent : 'space-between',
     },
+    store:{
+      margin:"15%"
+    }
   }
   return (
     <div className="App">
       <h1>Home</h1>
       <ListDisplay dataObj={folderToFileData} />
       <div style={styles.stores}>
-        <a href="https://play.google.com/store/apps/details?id=com.larrivarpothi" >
-          <img src={playstorePng} width={width/7} height={height/7} alt=""/>
+        <a style={styles.store} href="https://play.google.com/store/apps/details?id=com.larrivarpothi" >
+          <img src={playstorePng} width={theWidth} height={height/7} alt=""/>
         </a>
-        <Link to={'/joke'} >
-          <img src={appstorePng} width={width/7} height={height/7} alt=""/>
+        <Link style={styles.store} to={'/joke'} >
+          <img src={appstorePng} width={theWidth} height={height/7} alt=""/>
         </Link>
       </div>
       <ul>
@@ -158,31 +162,11 @@ export function BarOption({ text }) {
 }
 
 function OpenPdf({link,title}) {
-  // return <OpenPdfMobile link={link} title={title} />
-  if(isMobile) return <OpenPdfMobile link={link} title={title} />
-  return <OpenPdfDesktop link={link} title={title} />
-}
-
-function OpenPdfDesktop({ link, title }) {
-  const { innerWidth: width, innerHeight: height } = window;
-  // const { link,title } = useParams()
-  // const useableLink=decode(link)
-  const useableLink = link
-  console.log(useableLink)
-  return (
-    <div >
-      <h1>{title}</h1>
-      <embed src={useableLink} width={width} height={height} />
-    </div>
-  );
-}
-
-function OpenPdfMobile({link,title}) {
-  const { innerWidth: width, innerHeight: height } = window;
+  const linkSplt=link.split("SanthiyaPothi")
   const pdfLink =
-    "https://docs.google.com/viewer?url="+link+"&embedded=true"
-  console.log(pdfLink)
+    "lib/web/viewer.html?file=../../pdfs/"+linkSplt[1]
 
+  const { innerWidth: width, innerHeight: height } = window;
   const styles={
     container:{
       display: 'flex',
@@ -190,19 +174,39 @@ function OpenPdfMobile({link,title}) {
       justifyContent: 'center',
     },
     pdf:{
-      width:width*0.9,
-      height:height*0.9,
+      width:width*0.95,
+      height:height,
     }
   }
   return (
     <div>
       <h1 style={styles.title}>{title}</h1>
       <div style={styles.container}>
-        <iframe src={pdfLink} style={styles.pdf} frameborder="0"> </iframe>
+      <iframe
+        src={pdfLink}
+        style={styles.pdf}
+        title="webviewer"
+        // width={width*0.9}
+        // height={height*0.9}
+        // id="pdf-js-viewer"
+        // frameborder="0"
+      ></iframe>
       </div>
     </div>
   );
 }
+
+// function OpenPdfDesktop({ link, title }) {
+//   const { innerWidth: width, innerHeight: height } = window;
+//   return (
+//     <div >
+//       <h1>{title}</h1>
+//       <embed src={link} width={width} height={height} />
+//     </div>
+//   );
+// }
+// function OpenPdfTest({link,title}) {
+// }
 
 
 export default App;
