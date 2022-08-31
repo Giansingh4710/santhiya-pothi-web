@@ -19,19 +19,6 @@ function App() {
     </Routes>
   )
 }
-function AppleStoreJoke(){
-  return (
-  <div>
-      <h1>
-        SIKEEEEEEEEE
-      </h1>
-        <h2>Unfortunately you have made the Wrong Decision by choosing an iphone.🤢🤮</h2>
-      All jokes aside, will be trying to make the ios version soon. 
-      Until then, think about the wrong Decision you made by choosing an iphone.
-      Vaheguru
-    </div>
-  )
-}
 function Home() {
   const { innerWidth: width, innerHeight: height } = window;
   const theWidth=isMobile?width/2:width/5
@@ -66,46 +53,6 @@ function Home() {
     </div>
   )
 }
-function OtherLists() {
-  function getObj(obj, ans) {
-    if (!obj[ans]) {
-      for (const key in obj) {
-        const newAns = getObj(obj[key], ans)
-        if (!newAns) continue
-        return newAns
-      }
-    }
-    return obj[ans]
-  }
-  const { title } = useParams()
-  const link = itemToLink[title]
-  if (link !== 'folder')
-    return (<OpenPdf link={link} title={title} />)
-
-  let dataObj = getObj(folderToFileData, title)
-  if (!dataObj) {
-    return (
-      <div className="App">
-        <h1>Wrong link Entered</h1>
-        <h3>'{title}' not valid</h3>
-        <Link to={"/"} >
-          <BarOption
-            left={""}
-            text={"Go Back"}
-          />
-        </Link>
-
-      </div>
-
-    )
-  }
-  return (
-    <div className="App">
-      <h1>{title}</h1>
-      <ListDisplay dataObj={dataObj} />
-    </div>
-  )
-}
 
 function ListDisplay({ dataObj }) {
   const styles = {
@@ -122,7 +69,7 @@ function ListDisplay({ dataObj }) {
     <div style={styles.container}>
       <div style={styles.scroll}>
         {keysLst.map((item) => {
-          console.log(item,itemToLink[item])
+          // console.log(item,itemToLink[item])
           return (
             <Link to={`/${item}`} key={item} >
               <BarOption
@@ -136,6 +83,48 @@ function ListDisplay({ dataObj }) {
     </div>
   );
 }
+
+function OtherLists() {
+  function getObj(obj, ans) {
+    if (!obj[ans]) {
+      for (const key in obj) {
+        const newAns = getObj(obj[key], ans)
+        if (!newAns) continue
+        return newAns
+      }
+    }
+    return obj[ans]
+  }
+  const { title } = useParams()
+  const link = itemToLink[title]
+  if (!link) {
+    return (
+      <div className="App">
+        <h1>Wrong link Entered</h1>
+        <h3>'{title}' not valid</h3>
+        <Link to={"/"} >
+          <BarOption
+            left={""}
+            text={"Go Back"}
+          />
+        </Link>
+      </div>
+    )
+  }
+
+  if (link !== 'folder')
+    return (<OpenPdf link={link} title={title} />)
+
+  let dataObj = getObj(folderToFileData, title)
+  console.log(dataObj)
+  return (
+    <div className="App">
+      <h1>{title}</h1>
+      <ListDisplay dataObj={dataObj} />
+    </div>
+  )
+}
+
 export function BarOption({ text }) {
   const styles = {
     itemContainer: {
@@ -194,6 +183,20 @@ function OpenPdf({link,title}) {
       </div>
     </div>
   );
+}
+
+function AppleStoreJoke(){
+  return (
+  <div>
+      <h1>
+        SIKEEEEEEEEE
+      </h1>
+        <h2>Unfortunately you have made the Wrong Decision by choosing an iphone.🤢🤮</h2>
+      All jokes aside, will be trying to make the ios version soon. 
+      Until then, think about the wrong Decision you made by choosing an iphone.
+      Vaheguru
+    </div>
+  )
 }
 
 // function OpenPdfDesktop({ link, title }) {

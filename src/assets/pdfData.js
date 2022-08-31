@@ -5,7 +5,7 @@ export const folderToFileData = {
       currentAng: 1,
       uri: 'http://45.41.235.161/~daasstor/SanthiyaPothi/SriGuruGranthSahibJee/AdiMaharaj%28BigFile%29.pdf',
     },
-    'Adi Maharaj (Small File)': {
+    'Adi Maharaj (Small File/Typed)': {
       checked: false,
       currentAng: 1,
       uri: 'http://45.41.235.161/~daasstor/SanthiyaPothi/SriGuruGranthSahibJee/AdiMaharaj%28SmallFile%29.pdf',
@@ -406,26 +406,26 @@ export const folderToFileData = {
       uri: 'http://45.41.235.161/~daasstor/SanthiyaPothi/BhattaDeSwaiye/SwaiyeMahallayPanjveyKy.pdf',
     },
   },
-  'Vaara De Vadeek': {
-    'Vaara Di Vadeek Mahalla 1': {
+  'Vaara Te Vadeek': {
+    'Vaara Te Vadeek Mahalla 1': {
       checked: false,
       currentAng: 1,
-      uri: 'http://45.41.235.161/~daasstor/SanthiyaPothi/VaaraDeVadeek/VaaraDiVadeekMahalla1.pdf',
+      uri: 'http://45.41.235.161/~daasstor/SanthiyaPothi/VaaraTeVadeek/VaaraTeVadeekMahalla1.pdf',
     },
-    'Vaara Di Vadeek Mahalla 3': {
+    'Vaara Te Vadeek Mahalla 3': {
       checked: false,
       currentAng: 1,
-      uri: 'http://45.41.235.161/~daasstor/SanthiyaPothi/VaaraDeVadeek/VaaraDiVadeekMahalla3.pdf',
+      uri: 'http://45.41.235.161/~daasstor/SanthiyaPothi/VaaraTeVadeek/VaaraTeVadeekMahalla3.pdf',
     },
-    'Vaara Di Vadeek Mahalla 4': {
+    'Vaara Te Vadeek Mahalla 4': {
       checked: false,
       currentAng: 1,
-      uri: 'http://45.41.235.161/~daasstor/SanthiyaPothi/VaaraDeVadeek/VaaraDiVadeekMahalla4.pdf',
+      uri: 'http://45.41.235.161/~daasstor/SanthiyaPothi/VaaraTeVadeek/VaaraTeVadeekMahalla4.pdf',
     },
-    'Vaara Di Vadeek Mahalla 5': {
+    'Vaara Te Vadeek Mahalla 5': {
       checked: false,
       currentAng: 1,
-      uri: 'http://45.41.235.161/~daasstor/SanthiyaPothi/VaaraDeVadeek/VaaraDiVadeekMahalla5.pdf',
+      uri: 'http://45.41.235.161/~daasstor/SanthiyaPothi/VaaraTeVadeek/VaaraTeVadeekMahalla5.pdf',
     },
   },
   'Vidya Sagar Pothis': {
@@ -465,7 +465,7 @@ export const folderToFileData = {
 export const itemToLink={
   'Sri Guru Granth Sahib Jee': 'folder',
   'Adi Maharaj (Big File)': 'http://45.41.235.161/~daasstor/SanthiyaPothi/SriGuruGranthSahibJee/AdiMaharaj%28BigFile%29.pdf',
-  'Adi Maharaj (Small File)': 'http://45.41.235.161/~daasstor/SanthiyaPothi/SriGuruGranthSahibJee/AdiMaharaj%28SmallFile%29.pdf',
+  'Adi Maharaj (Small File/Typed)': 'http://45.41.235.161/~daasstor/SanthiyaPothi/SriGuruGranthSahibJee/AdiMaharaj%28SmallFile%29.pdf',
   'Bhag Part 1(Used By Sant Gurbachan Singh Ji)': 'http://45.41.235.161/~daasstor/SanthiyaPothi/SriGuruGranthSahibJee/Puratan_Bhag_Part_1_Used_By_Sant_Gurbachan_Singh_Ji.pdf',
   'Bhag Part 2(Used By Sant Gurbachan Singh Ji)': 'http://45.41.235.161/~daasstor/SanthiyaPothi/SriGuruGranthSahibJee/Puratan_Bhag_Part_2_Used_By_Sant_Gurbachan_Singh_Ji.pdf',
   'Non Larrivar Saroop 1': 'http://45.41.235.161/~daasstor/SanthiyaPothi/SriGuruGranthSahibJee/NonLarrivarSaroop1.pdf',
@@ -549,11 +549,11 @@ export const itemToLink={
   'Swaiye Mahallay Tejey Ky': 'http://45.41.235.161/~daasstor/SanthiyaPothi/BhattaDeSwaiye/SwaiyeMahallayTejeyKy.pdf',
   'Swaiye Mahallay Chothey Ky': 'http://45.41.235.161/~daasstor/SanthiyaPothi/BhattaDeSwaiye/SwaiyeMahallayChotheyKy.pdf',
   'Swaiye Mahallay Panjvey Ky': 'http://45.41.235.161/~daasstor/SanthiyaPothi/BhattaDeSwaiye/SwaiyeMahallayPanjveyKy.pdf',
-  'Vaara De Vadeek': 'folder',
-  'Vaara Di Vadeek Mahalla 1': 'http://45.41.235.161/~daasstor/SanthiyaPothi/VaaraDeVadeek/VaaraDiVadeekMahalla1.pdf',
-  'Vaara Di Vadeek Mahalla 3': 'http://45.41.235.161/~daasstor/SanthiyaPothi/VaaraDeVadeek/VaaraDiVadeekMahalla3.pdf',
-  'Vaara Di Vadeek Mahalla 4': 'http://45.41.235.161/~daasstor/SanthiyaPothi/VaaraDeVadeek/VaaraDiVadeekMahalla4.pdf',
-  'Vaara Di Vadeek Mahalla 5': 'http://45.41.235.161/~daasstor/SanthiyaPothi/VaaraDeVadeek/VaaraDiVadeekMahalla5.pdf',
+  'Vaara Te Vadeek': 'folder',
+  'Vaara Te Vadeek Mahalla 1': 'http://45.41.235.161/~daasstor/SanthiyaPothi/VaaraTeVadeek/VaaraTeVadeekMahalla1.pdf',
+  'Vaara Te Vadeek Mahalla 3': 'http://45.41.235.161/~daasstor/SanthiyaPothi/VaaraTeVadeek/VaaraTeVadeekMahalla3.pdf',
+  'Vaara Te Vadeek Mahalla 4': 'http://45.41.235.161/~daasstor/SanthiyaPothi/VaaraTeVadeek/VaaraTeVadeekMahalla4.pdf',
+  'Vaara Te Vadeek Mahalla 5': 'http://45.41.235.161/~daasstor/SanthiyaPothi/VaaraTeVadeek/VaaraTeVadeekMahalla5.pdf',
   'Vidya Sagar Pothis': 'folder',
   'Adhyatam Prakash': 'http://45.41.235.161/~daasstor/SanthiyaPothi/VidyaSagarPothis/Adhyatam_Prakash.pdf',
   'Bavras Amrit': 'http://45.41.235.161/~daasstor/SanthiyaPothi/VidyaSagarPothis/Bavras_Amrit.pdf',
