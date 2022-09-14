@@ -69,7 +69,6 @@ function ListDisplay({ dataObj }) {
     <div style={styles.container}>
       <div style={styles.scroll}>
         {keysLst.map((item) => {
-          // console.log(item,itemToLink[item])
           return (
             <Link to={`/${item}`} key={item} >
               <BarOption
@@ -86,15 +85,19 @@ function ListDisplay({ dataObj }) {
 
 function OtherLists() {
   function getObj(obj, ans) {
-    if (!obj[ans]) {
-      for (const key in obj) {
-        const newAns = getObj(obj[key], ans)
-        if (!newAns) continue
-        return newAns
-      }
+    if(obj[ans]) return obj[ans]
+
+    for (const key in obj) {
+      // console.log(key)
+      if(typeof obj[key]!=="object") continue
+
+      const newAns = getObj(obj[key], ans)
+      if (!newAns) continue
+      return newAns
     }
-    return obj[ans]
+    return false
   }
+
   const { title } = useParams()
   const link = itemToLink[title]
   if (!link) {
@@ -116,7 +119,7 @@ function OtherLists() {
     return (<OpenPdf link={link} title={title} />)
 
   let dataObj = getObj(folderToFileData, title)
-  console.log(dataObj)
+  // console.log(dataObj)
   return (
     <div className="App">
       <h1>{title}</h1>
@@ -151,10 +154,12 @@ export function BarOption({ text }) {
 }
 
 function OpenPdf({link,title}) {
-  const linkSplt=link.split("SanthiyaPothi")
+  // const linkSplt=link.split("SanthiyaPothi")
+  const linkSplt=link.split("pdfs")
   const pdfLink =
-    "lib/web/viewer.html?file=../../pdfs/"+linkSplt[1]
+    "lib/web/viewer.html?file=../../pdfs"+linkSplt[1]
 
+  console.log(pdfLink,link)
   const { innerWidth: width, innerHeight: height } = window;
   const styles={
     container:{
