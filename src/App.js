@@ -174,7 +174,9 @@ function OpenPdf({link,title}) {
   }
   return (
     <div>
-      <h1 style={styles.title}>{title}</h1>
+      <a href={link}>
+        <h1 style={styles.title}>{title}</h1>
+      </a>
       <div style={styles.container}>
       <iframe
         src={pdfLink}

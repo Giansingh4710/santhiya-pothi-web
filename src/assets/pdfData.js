@@ -1,5 +1,6 @@
 // http://45.41.235.161/~daasstor/SanthiyaPothi
 // https://santhiyapothi.xyz/pdfs/
+
 // const folderToFileData = {
 export const folderToFileData = {
   'Sri Guru Granth Sahib Jee': {
@@ -70,6 +71,11 @@ export const folderToFileData = {
         checked: false,
         currentAng: 1,
         uri: 'https://santhiyapothi.xyz/pdfs/SriGuruGranthSahibJee/DasamMaharaj/DasamMahraj716-1429%28Part2%29.pdf',
+      },
+      'Dasaahra Mahaatam': {
+        checked: false,
+        currentAng: 1,
+        uri: 'https://santhiyapothi.xyz/pdfs/SriGuruGranthSahibJee/DasamMaharaj/DasaahraMahaatam.pdf',
       },
       'Facts Beyond Doubt on Sri Dasam Granth Sahib Ji': {
         checked: false,
@@ -503,6 +509,7 @@ export const itemToLink={
   'Dasam Maharaj Larrivar': 'https://santhiyapothi.xyz/pdfs/SriGuruGranthSahibJee/DasamMaharaj/DasamMaharajlarrivaar.pdf',
   'Dasam Maharaj 1 - 716 (Part1)': 'https://santhiyapothi.xyz/pdfs/SriGuruGranthSahibJee/DasamMaharaj/DasamMahraj1-716%28Part1%29.pdf',
   'Dasam Maharaj 716 - 1429 (Part2)': 'https://santhiyapothi.xyz/pdfs/SriGuruGranthSahibJee/DasamMaharaj/DasamMahraj716-1429%28Part2%29.pdf',
+  'Dasaahra Mahaatam': 'https://santhiyapothi.xyz/pdfs/SriGuruGranthSahibJee/DasamMaharaj/DasaahraMahaatam.pdf',
   'Facts Beyond Doubt on Sri Dasam Granth Sahib Ji': 'https://santhiyapothi.xyz/pdfs/SriGuruGranthSahibJee/DasamMaharaj/FactsBeyondDoubt%202022_SGGS%20Academy.pdf',
   'Nitnem': 'folder',
   'Nitnem Not Larrivaar': 'https://santhiyapothi.xyz/pdfs/Nitnem/NitnemNotLarrivaar.pdf',
