@@ -174,7 +174,7 @@ function OpenPdf({link,title}) {
   }
   return (
     <div>
-      <a href={link}>
+      <a href={link} target="_blank" rel="noreferrer">
         <h1 style={styles.title}>{title}</h1>
       </a>
       <div style={styles.container}>
