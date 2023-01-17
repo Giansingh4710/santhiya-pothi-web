@@ -189,10 +189,10 @@ export const folderToFileData = {
       currentAng: 1,
       uri: 'https://santhiyapothi.xyz/pdfs/BaiVarra/11)JaitsriKiVaarMahala5.pdf',
     },
-    '12) Soohi KI Vaar Mahala 3': {
+    '12) Soohi Ki Vaar Mahala 3': {
       checked: false,
       currentAng: 1,
-      uri: 'https://santhiyapothi.xyz/pdfs/BaiVarra/12)SoohiKIVaarMahala3.pdf',
+      uri: 'https://santhiyapothi.xyz/pdfs/BaiVarra/12)SoohiKiVaarMahala3.pdf',
     },
     '13) Bilval Ki Vaar Mahala 4': {
       checked: false,
@@ -534,7 +534,7 @@ export const itemToLink={
   '9) Vidhans Ki Vaar Mahala 4': 'https://santhiyapothi.xyz/pdfs/BaiVarra/9)VidhansKiVaarMahala4.pdf',
   '10) Sorath Ki Vaar Mahala 4': 'https://santhiyapothi.xyz/pdfs/BaiVarra/10)SorathKiVaarMahala4.pdf',
   '11) Jaitsri Ki Vaar Mahala 5': 'https://santhiyapothi.xyz/pdfs/BaiVarra/11)JaitsriKiVaarMahala5.pdf',
-  '12) Soohi KI Vaar Mahala 3': 'https://santhiyapothi.xyz/pdfs/BaiVarra/12)SoohiKIVaarMahala3.pdf',
+  '12) Soohi Ki Vaar Mahala 3': 'https://santhiyapothi.xyz/pdfs/BaiVarra/12)SoohiKiVaarMahala3.pdf',
   '13) Bilval Ki Vaar Mahala 4': 'https://santhiyapothi.xyz/pdfs/BaiVarra/13)BilvalKiVaarMahala4.pdf',
   '14) Ramkali Ki Vaar Mahala 3': 'https://santhiyapothi.xyz/pdfs/BaiVarra/14)RamkaliKiVaarMahala3.pdf',
   '15) Ramkali Ki Vaar Mahala 5': 'https://santhiyapothi.xyz/pdfs/BaiVarra/15)RamkaliKiVaarMahala5.pdf',
