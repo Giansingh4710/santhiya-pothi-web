@@ -38,9 +38,9 @@ function Home() {
         <a style={styles.store} href="https://play.google.com/store/apps/details?id=com.larrivarpothi" >
           <img src={playstorePng} width={theWidth} height={height/7} alt=""/>
         </a>
-        <Link style={styles.store} to={'/joke'} >
+        <a style={styles.store} href="https://apps.apple.com/app/id1669154032" >
           <img src={appstorePng} width={theWidth} height={height/7} alt=""/>
-        </Link>
+        </a>
       </div>
       <ul>
         <li>
