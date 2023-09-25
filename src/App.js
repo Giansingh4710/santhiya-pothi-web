@@ -12,6 +12,7 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<Home />} />
+      <Route path='/santhiya-pothi-web' element={<Home />} />
       <Route path='/:title' element={<OtherLists />} />
       <Route path='/joke' element={<AppleStoreJoke />} />
       {/* <Route path='/:title/:link' element={<OpenPdf />} /> */}
@@ -146,14 +147,14 @@ export function BarOption({ text }) {
 function OpenPdf({ link, title }) {
   function getAudioUrl(url) {
     const avaliableAudios = ['BaiVarra', 'BhagatBani', 'PanjGranthi']
-    const splits = url.split('/') // ["https:", "", "santhiyapothi.xyz", "pdfs", "PanjGranthi", "GauriBavanAkahri.pdf"]
+    const splits = url.split('/') // ["http:", "", "45.41.235.33", "~daassto1", "SanthiyaPothi", "pdfs", "PanjGranthi", "GauriBavanAkahri.pdf"] (
     const haveLink = avaliableAudios.some(
-      (audioType) => audioType === splits[4]
+      (audioType) => audioType === splits[6]
     )
     if (!haveLink) return false
 
-    let pathToLink = './audios/'
-    for (let i = 4; i < splits.length; i++) {
+    let pathToLink = 'http://45.41.235.33/~daassto1/SanthiyaPothi/audios/'
+    for (let i = 6; i < splits.length; i++) {
       if (i === splits.length - 1) {
         pathToLink += splits[i].replace('.pdf', '.mp3')
         continue
@@ -162,9 +163,12 @@ function OpenPdf({ link, title }) {
     }
     return pathToLink
   }
+
   const linkSplt = link.split('pdfs')
   const mp3Link = getAudioUrl(link)
-  const pdfLink = 'lib/web/viewer.html?file=../../pdfs' + linkSplt[1]
+  // const pdfLink = 'lib/web/viewer.html?file=../../pdfs' + linkSplt[1]
+  // const pdfLink = 'lib/web/viewer.html?file=' + link
+  const pdfLink =  link
 
   console.log(pdfLink, mp3Link, link)
   const { innerWidth: width, innerHeight: height } = window
@@ -188,7 +192,7 @@ function OpenPdf({ link, title }) {
         <h1 style={styles.title}>{title}</h1>
       </a>
       {mp3Link ? (
-        <audio style={styles.audio} src={mp3Link} controls autoPlay />
+        <audio style={styles.audio} src={mp3Link} controls />
       ) : (
         <></>
       )}
@@ -220,17 +224,5 @@ function AppleStoreJoke() {
     </div>
   )
 }
-
-// function OpenPdfDesktop({ link, title }) {
-//   const { innerWidth: width, innerHeight: height } = window;
-//   return (
-//     <div >
-//       <h1>{title}</h1>
-//       <embed src={link} width={width} height={height} />
-//     </div>
-//   );
-// }
-// function OpenPdfTest({link,title}) {
-// }
 
 export default App
