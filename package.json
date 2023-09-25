@@ -1,6 +1,7 @@
 {
   "name": "santhiya-pothi-web",
   "version": "0.1.0",
+  "homepage": "https://giansingh4710.github.io/santhiya-pothi-web",
   "private": true,
   "dependencies": {
     "cross-env": "^7.0.3",
@@ -14,7 +15,9 @@
     "start": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -33,5 +36,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
   }
 }
