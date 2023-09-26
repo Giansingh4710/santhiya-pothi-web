@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/santhiya-pothi-web/static/css/main.540bb1ef.chunk.css",
-    "main.js": "/santhiya-pothi-web/static/js/main.309e5655.chunk.js",
-    "main.js.map": "/santhiya-pothi-web/static/js/main.309e5655.chunk.js.map",
+    "main.js": "/santhiya-pothi-web/static/js/main.f524d848.chunk.js",
+    "main.js.map": "/santhiya-pothi-web/static/js/main.f524d848.chunk.js.map",
     "runtime-main.js": "/santhiya-pothi-web/static/js/runtime-main.68b6c85a.js",
     "runtime-main.js.map": "/santhiya-pothi-web/static/js/runtime-main.68b6c85a.js.map",
     "static/js/2.7ff7b45c.chunk.js": "/santhiya-pothi-web/static/js/2.7ff7b45c.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.68b6c85a.js",
     "static/js/2.7ff7b45c.chunk.js",
     "static/css/main.540bb1ef.chunk.css",
-    "static/js/main.309e5655.chunk.js"
+    "static/js/main.f524d848.chunk.js"
   ]
 }
