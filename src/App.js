@@ -153,7 +153,7 @@ function OpenPdf({ link, title }) {
     )
     if (!haveLink) return false
 
-    let pathToLink = 'http://45.41.235.33/~daassto1/SanthiyaPothi/audios/'
+    let pathToLink = 'https://daasstorage13.blob.core.windows.net/ds1/SanthiyaPothi/audios/'
     for (let i = 6; i < splits.length; i++) {
       if (i === splits.length - 1) {
         pathToLink += splits[i].replace('.pdf', '.mp3')
@@ -164,7 +164,7 @@ function OpenPdf({ link, title }) {
     return pathToLink
   }
 
-  const linkSplt = link.split('pdfs')
+  // const linkSplt = link.split('pdfs')
   const mp3Link = getAudioUrl(link)
   // const pdfLink = 'lib/web/viewer.html?file=../../pdfs' + linkSplt[1]
   // const pdfLink = 'lib/web/viewer.html?file=' + link
