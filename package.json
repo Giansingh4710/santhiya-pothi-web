@@ -1,7 +1,6 @@
 {
   "name": "santhiya-pothi-web",
   "version": "0.1.0",
-  "homepage": "https://giansingh4710.github.io/santhiya-pothi-web",
   "private": true,
   "dependencies": {
     "cross-env": "^7.0.3",
