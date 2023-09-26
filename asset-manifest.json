@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/santhiya-pothi-web/static/css/main.540bb1ef.chunk.css",
-    "main.js": "/santhiya-pothi-web/static/js/main.f524d848.chunk.js",
-    "main.js.map": "/santhiya-pothi-web/static/js/main.f524d848.chunk.js.map",
-    "runtime-main.js": "/santhiya-pothi-web/static/js/runtime-main.68b6c85a.js",
-    "runtime-main.js.map": "/santhiya-pothi-web/static/js/runtime-main.68b6c85a.js.map",
-    "static/js/2.7ff7b45c.chunk.js": "/santhiya-pothi-web/static/js/2.7ff7b45c.chunk.js",
-    "static/js/2.7ff7b45c.chunk.js.map": "/santhiya-pothi-web/static/js/2.7ff7b45c.chunk.js.map",
-    "index.html": "/santhiya-pothi-web/index.html",
-    "static/css/main.540bb1ef.chunk.css.map": "/santhiya-pothi-web/static/css/main.540bb1ef.chunk.css.map",
-    "static/js/2.7ff7b45c.chunk.js.LICENSE.txt": "/santhiya-pothi-web/static/js/2.7ff7b45c.chunk.js.LICENSE.txt",
-    "static/media/appstore.1a007043.png": "/santhiya-pothi-web/static/media/appstore.1a007043.png",
-    "static/media/playstore.e42a7dad.png": "/santhiya-pothi-web/static/media/playstore.e42a7dad.png"
+    "main.css": "/static/css/main.540bb1ef.chunk.css",
+    "main.js": "/static/js/main.f524d848.chunk.js",
+    "main.js.map": "/static/js/main.f524d848.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.36369031.js",
+    "runtime-main.js.map": "/static/js/runtime-main.36369031.js.map",
+    "static/js/2.7ff7b45c.chunk.js": "/static/js/2.7ff7b45c.chunk.js",
+    "static/js/2.7ff7b45c.chunk.js.map": "/static/js/2.7ff7b45c.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.540bb1ef.chunk.css.map": "/static/css/main.540bb1ef.chunk.css.map",
+    "static/js/2.7ff7b45c.chunk.js.LICENSE.txt": "/static/js/2.7ff7b45c.chunk.js.LICENSE.txt",
+    "static/media/appstore.1a007043.png": "/static/media/appstore.1a007043.png",
+    "static/media/playstore.e42a7dad.png": "/static/media/playstore.e42a7dad.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.68b6c85a.js",
+    "static/js/runtime-main.36369031.js",
     "static/js/2.7ff7b45c.chunk.js",
     "static/css/main.540bb1ef.chunk.css",
     "static/js/main.f524d848.chunk.js"
